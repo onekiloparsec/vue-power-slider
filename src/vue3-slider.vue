@@ -168,7 +168,8 @@ export default defineComponent({
       vars,
       circumference,
       strokeOffset,
-      circleOffset: computed(() => props.circleOffset),      sliderValueDegrees: store.sliderValueDegrees,
+      circleOffset: computed(() => props.circleOffset),
+      sliderValueDegrees: store.sliderValueDegrees,
     };
   },
 });
@@ -183,7 +184,8 @@ export default defineComponent({
     tabindex="0"
     ref="slider"
     @touchstart="clickHandler"
-    @mousedown="clickHandler"    @mouseenter="hovering = true"
+    @mousedown="clickHandler"
+    @mouseenter="hovering = true"
     @mouseleave="hovering = false"
     @keydown="handleKeydown"
   >
@@ -208,7 +210,8 @@ export default defineComponent({
     <div class="track" />
     <div
       class="track-filled"
-      :style="{        width: filledWidth + 'px',
+      :style="{
+        width: filledWidth + 'px',
         right: flip ? '0px' : undefined,
         left: flip ? 'auto' : undefined,
       }"
@@ -230,7 +233,8 @@ export default defineComponent({
     tabindex="0"
     ref="slider"
     @touchstart="clickHandler"
-    @mousedown="clickHandler"    @mouseenter="hovering = true"
+    @mousedown="clickHandler"
+    @mouseenter="hovering = true"
     @mouseleave="hovering = false"
     @keydown="handleKeydown"
   >
@@ -255,7 +259,8 @@ export default defineComponent({
     <div class="track" />
     <div
       class="track-filled"
-      :style="{        height: filledWidth + 'px',
+      :style="{
+        height: filledWidth + 'px',
         top: flip ? '0px' : undefined,
         bottom: flip ? 'auto' : undefined,
       }"
@@ -347,7 +352,8 @@ export default defineComponent({
   </div>
 </template>
 
-<style lang="scss">.fade-enter-active,
+<style lang="scss">
+.fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.2s;
 }
@@ -355,7 +361,6 @@ export default defineComponent({
 .fade-leave-to {
   opacity: 0;
 }
-
 .vue3-slider {
   box-sizing: border-box;
   width: var(--width, 100%);
