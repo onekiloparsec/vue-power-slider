@@ -8,7 +8,7 @@ export type Props = Readonly<{
   max: number;
   min: number;
   step: number;
-  tooltip: boolean;
+  tooltip: string;
   tooltipText: string;
   tooltipColor: string;
   tooltipTextColor: string;
@@ -59,8 +59,8 @@ export default {
     },
   },
   tooltip: {
-    type: Boolean,
-    default: false,
+    type: String,
+    default: 'auto',
   },
   tooltipText: {
     type: String,

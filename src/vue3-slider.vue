@@ -161,15 +161,14 @@ export default defineComponent({
       handleKeydown,
       applyHandleHoverClass,
       hovering,
-      showTooltip: computed(() => props.tooltip),
+      showTooltip: computed(() => (props.tooltip === 'always') || ((hovering || store.holding) && props.tooltip === 'auto')),
       tooltip,
       tooltipText,
       tooltipOffset,
       vars,
       circumference,
       strokeOffset,
-      circleOffset: computed(() => props.circleOffset),
-      sliderValueDegrees: store.sliderValueDegrees,
+      circleOffset: computed(() => props.circleOffset),      sliderValueDegrees: store.sliderValueDegrees,
     };
   },
 });
@@ -193,7 +192,7 @@ export default defineComponent({
       <div
         class="tooltip"
         ref="tooltip"
-        v-show="showTooltip && (hovering || holding)"
+        v-show="showTooltip"
         :style="{
           transform: flip
             ? `translate(${-tooltipOffset}px)`
@@ -210,8 +209,7 @@ export default defineComponent({
     <div class="track" />
     <div
       class="track-filled"
-      :style="{
-        width: filledWidth + 'px',
+      :style="{        width: filledWidth + 'px',
         right: flip ? '0px' : undefined,
         left: flip ? 'auto' : undefined,
       }"
@@ -242,7 +240,7 @@ export default defineComponent({
       <div
         class="tooltip"
         ref="tooltip"
-        v-show="showTooltip && (hovering || holding)"
+        v-show="showTooltip"
         :style="{
           transform: flip
             ? `translateY(${tooltipOffset}px)`
@@ -259,8 +257,7 @@ export default defineComponent({
     <div class="track" />
     <div
       class="track-filled"
-      :style="{
-        height: filledWidth + 'px',
+      :style="{        height: filledWidth + 'px',
         top: flip ? '0px' : undefined,
         bottom: flip ? 'auto' : undefined,
       }"
@@ -339,7 +336,7 @@ export default defineComponent({
         <div
           class="tooltip"
           ref="tooltip"
-          v-show="showTooltip && (hovering || holding)"
+          v-show="showTooltip"
           :style="{
             transform: `rotate(${-sliderValueDegrees - circleOffset}deg)`,
             top: `calc(max(calc(${tooltipOffset}px + 34px), calc(${tooltipOffset}px + var(--height) * 1.3)) * -1)`,
@@ -352,8 +349,7 @@ export default defineComponent({
   </div>
 </template>
 
-<style lang="scss">
-.fade-enter-active,
+<style lang="scss">.fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.2s;
 }
