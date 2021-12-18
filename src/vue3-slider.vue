@@ -203,7 +203,9 @@ export default defineComponent({
           bottom: `max(calc(var(--height, 6px) + 12px), calc(var(--height, 6px) * 1.35))`,
         }"
       >
-        {{ tooltipText }}
+        <slot>
+          {{ tooltipText }}
+        </slot>
       </div>
     </transition>
 
@@ -252,7 +254,9 @@ export default defineComponent({
           left: `max(calc(var(--height, 6px) + 14px), calc(var(--height, 6px) * 1.35))`,
         }"
       >
-        {{ tooltipText }}
+        <slot>
+          {{ tooltipText }}
+        </slot>
       </div>
     </transition>
 
@@ -345,7 +349,9 @@ export default defineComponent({
             top: `calc(max(calc(${tooltipOffset}px + 34px), calc(${tooltipOffset}px + var(--height) * 1.3)) * -1)`,
           }"
         >
-          {{ tooltipText }}
+          <slot>
+            {{ tooltipText }}
+          </slot>
         </div>
       </transition>
     </div>
