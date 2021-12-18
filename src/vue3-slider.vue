@@ -176,15 +176,14 @@ export default defineComponent({
 
 <template>
   <div
-    v-if="orientation == 'horizontal'"
+    v-if="orientation === 'horizontal'"
     key="horizontal"
     :style="{ ...vars }"
     class="vue3-slider"
     tabindex="0"
     ref="slider"
     @touchstart="clickHandler"
-    @mousedown="clickHandler"
-    @mouseenter="hovering = true"
+    @mousedown="clickHandler"    @mouseenter="hovering = true"
     @mouseleave="hovering = false"
     @keydown="handleKeydown"
   >
@@ -224,15 +223,14 @@ export default defineComponent({
   </div>
 
   <div
-    v-else-if="orientation == 'vertical'"
+    v-else-if="orientation === 'vertical'"
     key="vertical"
     :style="{ ...vars }"
     class="vue3-slider vertical"
     tabindex="0"
     ref="slider"
     @touchstart="clickHandler"
-    @mousedown="clickHandler"
-    @mouseenter="hovering = true"
+    @mousedown="clickHandler"    @mouseenter="hovering = true"
     @mouseleave="hovering = false"
     @keydown="handleKeydown"
   >
