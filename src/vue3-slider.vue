@@ -488,13 +488,13 @@ export default defineComponent({
     height: var(--height, 6px);
     border-radius: calc(var(--height, 6px) / 2);
     background-color: var(--color, #fb2727);
-    transform: scale(0);
+    transform: scale(1.4);
     transition: transform 0.2s ease;
     user-select: none;
 
-    &.hover {
-      transform: scale(1.35);
-    }
+    //&.hover {
+    //  transform: scale(1.35);
+    //}
   }
 }
 </style>
