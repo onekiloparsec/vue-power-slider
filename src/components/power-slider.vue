@@ -245,27 +245,8 @@
 
       // replace %v with sliders value in tooltip text
       const tooltipText = computed(() => {
-        if (!props.tooltip) return "";
-
-        let stringValue = "";
-
-        // if format function is provided then use that
-        // else just convert raw value to string
-        if (
-          props.formatTooltip !== null &&
-          typeof props.formatTooltip === "function"
-        ) {
-          stringValue = props.formatTooltip(
-            store.formattedSliderValue.value ||
-            formatModelValue(store.modelValueUnrounded.value)
-          );
-        } else {
-          stringValue = (
-            store.formattedSliderValue.value ||
-            formatModelValue(store.modelValueUnrounded.value)
-          ).toString();
-        }
-
+        if (!props.tooltip || props.tooltip === 'none') return "";
+        let stringValue = (store.formattedSliderValue.value || formatModelValue(store.modelValueUnrounded.value)).toString();
         return props.tooltipText.replace("%v", stringValue);
       });
 
