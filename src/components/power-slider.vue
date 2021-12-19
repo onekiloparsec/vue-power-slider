@@ -448,6 +448,9 @@
     }
 
     .track {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       background-color: var(--track-color, #f1f6f828);
       width: 100%;
       height: 100%;
