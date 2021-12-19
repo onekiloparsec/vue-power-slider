@@ -1,7 +1,7 @@
 import { watchEffect, Ref } from "vue";
 
-import { Props } from "@/props";
-import { Store } from "@/store";
+import { Props } from "../props";
+import { Store } from "../store";
 
 // filled width (observers slider element)
 export function useFilledWidthObserver(store: Store, props: Props) {

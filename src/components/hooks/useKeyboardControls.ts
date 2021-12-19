@@ -1,5 +1,5 @@
-import { Props } from "@/props";
-import { Store } from "@/store";
+import { Props } from "../props";
+import { Store } from "../store";
 
 export default function(store: Store, props: Props, updateModelValue: (val: number) => void) {
   const calculateValueFromDiff = (diff: number) => {

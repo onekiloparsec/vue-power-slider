@@ -1,5 +1,5 @@
-import { Props } from "@/props";
-import { Store } from "@/store";
+import { Props } from "../props";
+import { Store } from "../store";
 import { ref, SetupContext, watch, watchEffect } from "vue";
 
 export default function(store: Store, props: Props, emit: SetupContext["emit"]) {

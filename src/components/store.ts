@@ -1,6 +1,6 @@
 import { ref, computed, Ref, ComputedRef } from "vue";
 
-import { Props } from "@/props";
+import { Props } from "./props";
 
 export interface Store {
   slider: Ref<HTMLDivElement>;
@@ -51,19 +51,13 @@ export function useStore(props: Props): Store {
 
   const store: Store = {
     slider,
-
     modelValueUnrounded,
     formattedSliderValue,
-
     filledWidth,
     pixelsPerStep,
-
     sliderRange,
-
     sliderValueDegrees,
-
     sliderWidth,
-
     holding,
   };
 

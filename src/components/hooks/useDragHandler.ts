@@ -1,5 +1,5 @@
-import { Props } from "@/props";
-import { Store } from "@/store";
+import { Props } from "../props";
+import { Store } from "../store";
 import { SetupContext } from "vue";
 
 export default function(
