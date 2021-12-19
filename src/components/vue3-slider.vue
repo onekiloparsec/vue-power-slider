@@ -3,12 +3,12 @@ import { defineComponent, ref, computed, onMounted } from "vue";
 
 import props from "./props";
 
-import { useStore } from "@/store";
+import { useStore } from "./store";
 
-import { useFilledWidthObserver, useTooltipObserver } from "@/hooks/observers";
-import useKeyBoardControls from "@/hooks/useKeyboardControls";
-import useModelValue from "@/hooks/useModelValue";
-import useDragHandler from "@/hooks/useDragHandler";
+import { useFilledWidthObserver, useTooltipObserver } from "./hooks/observers";
+import useKeyBoardControls from "./hooks/useKeyboardControls";
+import useModelValue from "./hooks/useModelValue";
+import useDragHandler from "./hooks/useDragHandler";
 
 export default defineComponent({
   name: "vue3-slider",
