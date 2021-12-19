@@ -81,17 +81,13 @@ var props = {
     type: String,
     default: "#000000"
   },
-  formatTooltip: {
-    validator(val) {
-      if (typeof val !== "function") {
-        console.error("[Vue3Slider] Error: formatTooltip must be a function");
-        return false;
-      } else if (typeof val(0) !== "string") {
-        console.error("[Vue3Slider] Error: formatTooltip must return a string");
-        return false;
-      }
-      return true;
-    }
+  handleColor: {
+    type: String,
+    default: "#FFFFFF"
+  },
+  handleBorderColor: {
+    type: String,
+    default: "#CCCCCC"
   },
   orientation: {
     type: String,
@@ -414,14 +410,9 @@ const _sfc_main = defineComponent({
     });
     const tooltip = ref();
     const tooltipText = computed(() => {
-      if (!props2.tooltip)
+      if (!props2.tooltip || props2.tooltip === "none")
         return "";
-      let stringValue = "";
-      if (props2.formatTooltip !== null && typeof props2.formatTooltip === "function") {
-        stringValue = props2.formatTooltip(store.formattedSliderValue.value || formatModelValue(store.modelValueUnrounded.value));
-      } else {
-        stringValue = (store.formattedSliderValue.value || formatModelValue(store.modelValueUnrounded.value)).toString();
-      }
+      let stringValue = (store.formattedSliderValue.value || formatModelValue(store.modelValueUnrounded.value)).toString();
       return props2.tooltipText.replace("%v", stringValue);
     });
     const tooltipWidth = ref(0);
@@ -464,7 +455,9 @@ const _sfc_main = defineComponent({
         "--color": props2.color,
         "--track-color": props2.trackColor,
         "--tooltip-color": props2.tooltipColor,
-        "--tooltip-text-color": props2.tooltipTextColor
+        "--tooltip-text-color": props2.tooltipTextColor,
+        "--handle-color": props2.handleColor,
+        "--handle-border-color": props2.handleBorderColor
       };
     });
     onMounted(() => {
