@@ -87,7 +87,11 @@ var props = {
   },
   handleBorderColor: {
     type: String,
-    default: "#CCCCCC"
+    default: "#aaaaaa"
+  },
+  handleScale: {
+    type: Number,
+    default: 1.4
   },
   orientation: {
     type: String,
@@ -417,25 +421,10 @@ const _sfc_main = defineComponent({
     });
     const tooltipWidth = ref(0);
     const tooltipOffset = computed(() => {
-      var _a;
-      if (!props2.tooltip)
+      if (props2.tooltip === "none")
         return 0;
       let width = tooltipWidth.value;
-      if (props2.orientation !== "horizontal") {
-        width = (_a = tooltip.value) == null ? void 0 : _a.clientHeight;
-        if (!width) {
-          width = 20;
-        }
-        if (props2.orientation !== "vertical") {
-          return width;
-        }
-      } else {
-        if (!width) {
-          width = 14 + store.formattedSliderValue.value.toString().length * 9;
-        } else {
-          width += props2.height / 3;
-        }
-      }
+      width += 5;
       return store.filledWidth.value - width / 2;
     });
     const circumference = computed(() => {
@@ -457,7 +446,8 @@ const _sfc_main = defineComponent({
         "--tooltip-color": props2.tooltipColor,
         "--tooltip-text-color": props2.tooltipTextColor,
         "--handle-color": props2.handleColor,
-        "--handle-border-color": props2.handleBorderColor
+        "--handle-border-color": props2.handleBorderColor,
+        "--handle-scale": props2.handleScale
       };
     });
     onMounted(() => {
@@ -529,7 +519,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
             transform: _ctx.flip ? `translate(${-_ctx.tooltipOffset}px)` : `translate(${_ctx.tooltipOffset}px)`,
             right: _ctx.flip ? "0px" : void 0,
             left: _ctx.flip ? "auto" : void 0,
-            bottom: `max(calc(var(--height, 6px) + 12px), calc(var(--height, 6px) * 1.35))`
+            bottom: `max(calc(var(--height, 6px) + 12px), calc(var(--height, 6px) * var(--handle-scale, 1.4)))`
           })
         }, [
           renderSlot(_ctx.$slots, "tooltip", {}, () => [
@@ -554,7 +544,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     }, null, 4),
     createElementVNode("div", {
       class: normalizeClass(["handle", { hover: _ctx.applyHandleHoverClass }]),
-      style: normalizeStyle({ [_ctx.flip ? "right" : "left"]: _ctx.filledWidth - _ctx.height * 1.35 / 2 + "px" })
+      style: normalizeStyle({ [_ctx.flip ? "right" : "left"]: _ctx.filledWidth - _ctx.height * _ctx.handleScale / 2 + "px" })
     }, null, 6)
   ], 36)) : _ctx.orientation === "vertical" ? (openBlock(), createElementBlock("div", {
     key: "vertical",
@@ -602,7 +592,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     }, null, 4),
     createElementVNode("div", {
       class: normalizeClass(["handle", { hover: _ctx.applyHandleHoverClass }]),
-      style: normalizeStyle({ [_ctx.flip ? "top" : "bottom"]: _ctx.filledWidth - _ctx.height * 1.35 / 2 + "px" })
+      style: normalizeStyle({ [_ctx.flip ? "top" : "bottom"]: _ctx.filledWidth - _ctx.height * _ctx.handleScale / 2 + "px" })
     }, null, 6)
   ], 36)) : (openBlock(), createElementBlock("div", {
     key: "circular",
