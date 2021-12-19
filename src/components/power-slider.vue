@@ -26,16 +26,16 @@
           bottom: `max(calc(var(--height, 6px) + 12px), calc(var(--height, 6px) * 1.35))`,
         }"
       >
-        <slot>
+        <slot name="tooltip">
           {{ tooltipText }}
         </slot>
       </div>
     </transition>
 
-    <div class="track"/>
-    <div
-      class="track-filled"
-      :style="{
+    <div class="track">
+      <slot name="track"></slot>
+    </div>
+
         width: filledWidth + 'px',
         right: flip ? '0px' : undefined,
         left: flip ? 'auto' : undefined,
@@ -77,13 +77,16 @@
           left: `max(calc(var(--height, 6px) + 14px), calc(var(--height, 6px) * 1.35))`,
         }"
       >
-        <slot>
+        <slot name="tooltip">
           {{ tooltipText }}
         </slot>
       </div>
     </transition>
 
-    <div class="track"/>
+    <div class="track">
+      <slot name="track"></slot>
+    </div>
+
     <div
       class="track-filled"
       :style="{
@@ -172,7 +175,7 @@
             top: `calc(max(calc(${tooltipOffset}px + 34px), calc(${tooltipOffset}px + var(--height) * 1.3)) * -1)`,
           }"
         >
-          <slot>
+          <slot name="tooltip">
             {{ tooltipText }}
           </slot>
         </div>
