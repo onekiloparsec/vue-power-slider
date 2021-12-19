@@ -124,15 +124,21 @@
     :class="{ colorShift }"
     v-model="sliderVal"
     :height="height"
-    :tooltip="tooltip"
+    tooltip="always"
     :width="width + 'px'"
     :repeat="false"
     :min="min"
     :max="max"
     :step="step"
-    :tooltipText="tooltipText"
+    :tooltip-text="tooltipText"
+    handle-color="black"
+    color="transparent"
     :orientation="orientation"
-  />
+  >
+    <template #track>
+      <div style="background-color: blue; width: 100%; height: 0.1em;"></div>
+    </template>
+  </power-slider>
   <h1>{{ sliderVal }}</h1>
 </template>
 
