@@ -12,6 +12,8 @@ export type Props = Readonly<{
   tooltipText: string;
   tooltipColor: string;
   tooltipTextColor: string;
+  handleColor: string;
+  handleBorderColor: string;
   orientation: string;
   modelValue: number;
   repeat: boolean;
@@ -49,7 +51,7 @@ export default {
   step: {
     type: Number,
     default: 1,
-    validator(val: number) {
+    validator (val: number) {
       if (val !== 0) {
         return true;
       } else {
@@ -65,7 +67,7 @@ export default {
   tooltipText: {
     type: String,
     default: "%v",
-    validator(val: string) {
+    validator (val: string) {
       if (!val.includes("%v")) {
         console.error("[Vue3Slider] Error: tooltip text must contain %v");
         return false;
@@ -82,23 +84,18 @@ export default {
     type: String,
     default: "#000000",
   },
-  formatTooltip: {
-    validator(val: any) {
-      if (typeof val !== "function") {
-        console.error("[Vue3Slider] Error: formatTooltip must be a function");
-        return false;
-      } else if (typeof val(0) !== "string") {
-        console.error("[Vue3Slider] Error: formatTooltip must return a string");
-        return false;
-      }
-
-      return true;
-    },
+  handleColor: {
+    type: String,
+    default: "#FFFFFF",
+  },
+  handleBorderColor: {
+    type: String,
+    default: "#CCCCCC",
   },
   orientation: {
     type: String,
     default: "horizontal",
-    validator(val: string) {
+    validator (val: string) {
       return val === "horizontal" || val === "vertical" || val === "circular";
     },
   },
@@ -122,7 +119,7 @@ export default {
   circleOffset: {
     type: Number,
     default: 0,
-    validator(val: number) {
+    validator (val: number) {
       return val >= 0 && val <= 360;
     },
   },

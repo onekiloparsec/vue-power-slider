@@ -325,6 +325,8 @@
           "--track-color": props.trackColor,
           "--tooltip-color": props.tooltipColor,
           "--tooltip-text-color": props.tooltipTextColor,
+          "--handle-color": props.handleColor,
+          "--handle-border-color": props.handleBorderColor,
         };
       });
 
@@ -488,7 +490,8 @@
       width: var(--height, 6px);
       height: var(--height, 6px);
       border-radius: calc(var(--height, 6px) / 2);
-      background-color: var(--color, #fb2727);
+      background-color: var(--handle-color, white);
+      border-color: var(--handle-border-color, #cccccc);
       transform: scale(1.4);
       transition: transform 0.2s ease;
       user-select: none;
