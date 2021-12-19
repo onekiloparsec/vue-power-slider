@@ -31,7 +31,9 @@
   },
   "license": "MIT",
   "private": false,
-  "main": "dist/vue3-slider.common.js",
+  "main": "./dist/vue-slider.umd.js",
+  "module": "./dist/vue-slider.es.js",
+  "style": "./dist/style.css",
   "types": "vue3-slider.d.ts",
   "files": [
     "dist/*",
@@ -54,6 +56,6 @@
     "vite": "^2.6.4"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=14"
   }
 }
