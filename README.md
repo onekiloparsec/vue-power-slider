@@ -1,35 +1,17 @@
-<h1 style="display: flex; justify-content: space-between; align-items: center;">
-  🔥 Vue 3 Slider 🔥 
-  <a style="color: #EA005E; text-decoration: underline; font-size: 28px;" href="https://github.com/freddie-nelson/vue3-slider/stargazers">Become a Stargazer</a>
-</h1>
+# Vue Slider (Vue3) 
 
-**Horizontal, vertical and circular sliders!**
-**Fully responsive, touch screen and keyboard control support!**
-
-## Table of Contents 📰
-
-- [Demo](#demo)
-- [Installation](#installation)
-- [Getting Started](#getting-started)
-  - [Import Component](#import-component)
-  - [How to use](#how-to-use)
-- [License](#license)
-- [Contact](#contact)
-
-## Demo [(Live Demo)](https://freddie-nelson.github.io/vue3-slider/)
-
-![Demo](https://raw.githubusercontent.com/freddie-nelson/vue3-slider/main/demo.gif)
+Horizontal, vertical and circular sliders! Fully responsive, touch screen and keyboard control support!
 
 ## Installation
 
 ```bash
 # with npm
-npm install vue3-slider
+npm install vue-power-slider
 ```
 
 ```bash
 # with yarn
-yarn add vue3-slider
+yarn add vue-power-slider
 ```
 
 ## Getting Started 👍
@@ -37,12 +19,12 @@ yarn add vue3-slider
 ### Import component
 
 ```js
-import slider from "vue3-slider"
+import VuePowerSlider from "vue-power-slider"
 
 export default {
   ...
   components: {
-    "vue3-slider": slider
+    VuePowerSlider
   }
   ...
 }
@@ -51,7 +33,7 @@ export default {
 ### How to use
 
 ```html
-<vue3-slider v-model="myNumber" color="#FB278D" track-color="#FEFEFE" />
+<vue-power-slider v-model="myNumber" color="#FB278D" track-color="#FEFEFE" />
 ```
 
 ## Props
@@ -67,10 +49,8 @@ export default {
 | min              | Number   |          | 0          | cannot be greater than max                                    |
 | step             | Number   |          | 1          |                                                               |
 | tooltip          | Boolean  |          | false      |                                                               |
-| tooltipText      | String   |          | "%v"       | must contain %v (%v is replaced with slider's value)          |
 | tooltipColor     | String   |          | #FFFFFF    | must be a valid hex, rgb, rgba or html color value            |
 | tooltipTextColor | String   |          | #000000    | ^^^                                                           |
-| formatTooltip    | Function |          | null       | function must take one parameter (number) and return a string |
 | orientation      | String   |          | horizontal | restricted choice (horizontal, vertical, circular)            |
 | repeat           | Boolean  |          | false      |                                                               |
 | sticky           | Boolean  |          | false      |                                                               |
@@ -82,6 +62,10 @@ export default {
 **NOTE: When using the circular slider it is advised to use absolute units for width to avoid issues**
 
 **NOTE: circleOffset is calculated in degrees clockwise from the top of the circle (anti-clockwise with flip set to true)**
+
+## Slots:
+
+- default: default slot will render the tooltip text
 
 ## Events
 
@@ -116,8 +100,8 @@ export default {
 
 ```bash
 # clone repo
-git clone https://github.com/freddie-nelson/vue3-slider
-cd vue3-slider
+git clone https://github.com/freddie-nelson/vue-power-slider
+cd vue-power-slider
 
 # install deps
 npm i
@@ -134,10 +118,4 @@ yarn serve
 
 [MIT](https://opensource.org/licenses/MIT)
 
-Copyright © 2020 - Present, Freddie Nelson
-
-## Contact
-
-- [Send me an email 📧](mailto:freddie0208@hotmail.com)
-- [DM me through twitter](https://twitter.com/freddie_dev)
-- [Contact me through my website](https://freddienelson.co.uk)
+Initially based on https://github.com/freddie-nelson/vue-power-slider by Freddie Nelson

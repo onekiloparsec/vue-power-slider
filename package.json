@@ -1,61 +1,36 @@
 {
-  "name": "vue3-slider",
-  "version": "1.6.7",
-  "author": "Freddie Nelson <freddie0208@hotmail.com> (https://freddienelson.co.uk)",
-  "description": "A modern, customizable slider built entirely in Vue.js 3 with TypeScript in under 5KB (gzipped) and dependency free. (horizontal, vertical and circular slider)",
-  "keywords": [
-    "vue",
-    "vue3",
-    "vuejs",
-    "slider",
-    "range",
-    "component",
-    "ui",
-    "keyboard support",
-    "customizable",
-    "typescript",
-    "circular",
-    "circle",
-    "vertical",
-    "horizontal",
-    "0 dependencies"
-  ],
-  "homepage": "https://github.com/freddie-nelson/vue3-slider",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/freddie-nelson/vue3-slider"
-  },
-  "bugs": {
-    "url": "https://github.com/freddie-nelson/vue3-slider/issues",
-    "email": "freddie0208@hotmail.com"
-  },
-  "license": "MIT",
-  "private": false,
-  "main": "./dist/vue-slider.umd.js",
-  "module": "./dist/vue-slider.es.js",
-  "style": "./dist/style.css",
-  "types": "vue3-slider.d.ts",
-  "files": [
-    "dist/*",
-    "vue3-slider.d.ts",
-    "src/**/*.vue",
-    "*.json"
-  ],
+  "name": "@onekiloparsec/vue-power-slider",
+  "version": "2.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview"
   },
+  "files": [
+    "dist"
+  ],
+  "types": "index.d.ts",
+  "main": "./dist/vue-power-slider.umd.js",
+  "module": "./dist/vue-power-slider.es.js",
+  "style": "./dist/style.css",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onekiloparsec/vue-power-slider.git"
+  },
+  "bugs": {
+    "url": "https://github.com/onekiloparsec/vue-power-slider/issues"
+  },
+  "homepage": "https://github.com/onekiloparsec/vue-power-slider#readme",
+  "license": "MIT",
   "dependencies": {
     "vue": "^3.2.16"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.3",
     "autoprefixer": "^10.3.7",
-    "sass": "^1.45.0",
     "vite": "^2.6.4"
-  },
-  "engines": {
-    "node": ">=14"
   }
 }
