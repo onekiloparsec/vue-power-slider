@@ -17,7 +17,7 @@ export default defineComponent({
       min: 0,
       max: 100,
       step: 1,
-      tooltip: true,
+      tooltip: 'always',
       tooltipText: "%v",
       orientation: "horizontal",
       colorShift: false,
@@ -210,7 +210,9 @@ export default defineComponent({
     :sticky="sticky"
     :flip="flip"
     :circleOffset="circleOffset"
-  />
+  >
+    --{{sliderVal}}--
+  </vue3-slider>
   <h1>{{ sliderVal }}</h1>
 </template>
 
@@ -218,7 +220,7 @@ export default defineComponent({
 body {
   width: 100%;
   height: 100vh;
-  background-color: #080a0d;
+  /*background-color: #080a0d;*/
   margin: 0;
   padding: 8%;
   box-sizing: border-box;
@@ -303,7 +305,7 @@ h1 {
   padding: 0.5rem;
   font-size: 1rem;
   font-weight: 600;
-  background-color: black;
+  /*background-color: black;*/
   color: white;
   border: none;
   border-radius: 0.4rem;

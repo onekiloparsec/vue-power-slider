@@ -367,6 +367,7 @@ export default defineComponent({
 .fade-leave-to {
   opacity: 0;
 }
+
 .vue3-slider {
   box-sizing: border-box;
   width: var(--width, 100%);
