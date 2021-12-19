@@ -452,7 +452,7 @@
 
     .handle {
       position: absolute;
-      top: calc(var(--height, 6px) / 2 * -1 + 1);
+      top: 3px;
       width: var(--height, 6px);
       height: var(--height, 6px);
       border-radius: 50%;
