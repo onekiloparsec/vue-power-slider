@@ -36,18 +36,16 @@
       <slot name="track"></slot>
     </div>
 
+    <div class="track-filled"
+         :style="{
         width: filledWidth + 'px',
         right: flip ? '0px' : undefined,
         left: flip ? 'auto' : undefined,
-      }"
-    />
-    <div
-      class="handle"
-      :style="{
-        [flip ? 'right' : 'left']: filledWidth - (height * 1.35) / 2 + 'px',
-      }"
-      :class="{ hover: applyHandleHoverClass }"
-    />
+      }"/>
+
+    <div class="handle"
+         :style="{[flip ? 'right' : 'left']: filledWidth - (height * 1.35) / 2 + 'px'}"
+         :class="{ hover: applyHandleHoverClass }"/>
   </div>
 
   <div
@@ -95,11 +93,10 @@
         bottom: flip ? 'auto' : undefined,
       }"
     />
+
     <div
       class="handle"
-      :style="{
-        [flip ? 'top' : 'bottom']: filledWidth - (height * 1.35) / 2 + 'px',
-      }"
+      :style="{[flip ? 'top' : 'bottom']: filledWidth - (height * 1.35) / 2 + 'px'}"
       :class="{ hover: applyHandleHoverClass }"
     />
   </div>
