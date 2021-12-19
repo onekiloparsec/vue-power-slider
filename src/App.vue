@@ -132,6 +132,8 @@
     :step="step"
     :tooltip-text="tooltipText"
     handle-color="black"
+    handle-border-color="green"
+    :handle-scale="1.4"
     color="transparent"
     :orientation="orientation"
   >

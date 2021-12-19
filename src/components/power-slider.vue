@@ -23,7 +23,7 @@
             : `translate(${tooltipOffset}px)`,
           right: flip ? '0px' : undefined,
           left: flip ? 'auto' : undefined,
-          bottom: `max(calc(var(--height, 6px) + 12px), calc(var(--height, 6px) * 1.35))`,
+          bottom: `max(calc(var(--height, 6px) + 12px), calc(var(--height, 6px) * var(--handle-scale, 1.4)))`,
         }"
       >
         <slot name="tooltip">
@@ -44,7 +44,7 @@
       }"/>
 
     <div class="handle"
-         :style="{[flip ? 'right' : 'left']: filledWidth - (height * 1.35) / 2 + 'px'}"
+         :style="{[flip ? 'right' : 'left']: filledWidth - (height * handleScale) / 2 + 'px'}"
          :class="{ hover: applyHandleHoverClass }"/>
   </div>
 
@@ -96,7 +96,7 @@
 
     <div
       class="handle"
-      :style="{[flip ? 'top' : 'bottom']: filledWidth - (height * 1.35) / 2 + 'px'}"
+      :style="{[flip ? 'top' : 'bottom']: filledWidth - (height * handleScale) / 2 + 'px'}"
       :class="{ hover: applyHandleHoverClass }"
     />
   </div>
@@ -255,29 +255,10 @@
 
       // calculate tooltip offset
       const tooltipOffset = computed(() => {
-        if (!props.tooltip) return 0;
+        if (props.tooltip === 'none') return 0;
 
         let width: number | undefined = tooltipWidth.value;
-
-        // estimate width if it cant be found
-        if (props.orientation !== "horizontal") {
-          width = tooltip.value?.clientHeight;
-
-          if (!width) {
-            width = 20;
-          }
-
-          if (props.orientation !== "vertical") {
-            return width;
-          }
-        } else {
-          if (!width) {
-            width = 14 + store.formattedSliderValue.value.toString().length * 9;
-          } else {
-            width += props.height / 3;
-          }
-        }
-
+        width += 5
         return store.filledWidth.value - width / 2;
       });
 
@@ -308,6 +289,7 @@
           "--tooltip-text-color": props.tooltipTextColor,
           "--handle-color": props.handleColor,
           "--handle-border-color": props.handleBorderColor,
+          "--handle-scale": props.handleScale,
         };
       });
 
@@ -470,19 +452,16 @@
 
     .handle {
       position: absolute;
-      top: 0;
+      top: -3px;
       width: var(--height, 6px);
       height: var(--height, 6px);
-      border-radius: calc(var(--height, 6px) / 2);
+      border-radius: 50%;
+      border: 3px solid;
       background-color: var(--handle-color, white);
-      border-color: var(--handle-border-color, #cccccc);
-      transform: scale(1.4);
+      border-color: var(--handle-border-color, #aaaaaa);
+      transform: scale(var(--handle-scale, 1.4));
       transition: transform 0.2s ease;
       user-select: none;
-
-      //&.hover {
-      //  transform: scale(1.35);
-      //}
     }
   }
 </style>

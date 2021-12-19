@@ -90,7 +90,11 @@ export default {
   },
   handleBorderColor: {
     type: String,
-    default: "#CCCCCC",
+    default: "#aaaaaa",
+  },
+  handleScale: {
+    type: Number,
+    default: 1.4,
   },
   orientation: {
     type: String,
