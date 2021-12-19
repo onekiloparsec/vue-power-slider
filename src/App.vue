@@ -6,7 +6,7 @@
     <div v-show="showInputs" class="inputs">
       <div class="item">
         <h2>height:</h2>
-        <vue-power-slider
+        <power-slider
           class="slider"
           v-model="height"
           tooltip
@@ -22,7 +22,7 @@
 
       <div class="item">
         <h2>width:</h2>
-        <vue-power-slider
+        <power-slider
           class="slider"
           v-model="width"
           tooltip
@@ -39,7 +39,7 @@
 
       <div class="item">
         <h2>min:</h2>
-        <vue-power-slider
+        <power-slider
           class="slider"
           v-model="min"
           tooltip
@@ -55,7 +55,7 @@
 
       <div class="item">
         <h2>max:</h2>
-        <vue-power-slider
+        <power-slider
           class="slider"
           v-model="max"
           tooltip
@@ -71,7 +71,7 @@
 
       <div class="item">
         <h2>step:</h2>
-        <vue-power-slider
+        <power-slider
           class="slider"
           v-model="step"
           tooltip
@@ -119,7 +119,7 @@
     </button>
   </section>
 
-  <vue-power-slider
+  <power-slider
     class="slider"
     :class="{ colorShift }"
     v-model="sliderVal"
@@ -138,12 +138,12 @@
 
 <script lang="ts">
   import { defineComponent } from "vue";
-  import VuePowerSlider from "./components/vue-power-slider.vue";
+  import PowerSlider from "./components/power-slider.vue";
 
   export default defineComponent({
     name: "ServeDev",
     components: {
-      VuePowerSlider,
+      PowerSlider,
     },
     data () {
       return {

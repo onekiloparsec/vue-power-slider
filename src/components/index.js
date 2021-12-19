@@ -1,5 +1,5 @@
-import VueSlider from './vue3-slider.vue'
+import PowerSlider from './power-slider.vue'
 
 export {
-  VueSlider
+  PowerSlider
 }

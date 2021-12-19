@@ -193,7 +193,7 @@
   import useDragHandler from "./hooks/useDragHandler";
 
   export default defineComponent({
-    name: "vue-power-slider",
+    name: "power-slider",
     props,
     setup (props, { emit }) {
       // error checking

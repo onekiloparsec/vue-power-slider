@@ -8,8 +8,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/components/index.js'),
-      name: 'VueSlider',
-      fileName: (format) => `vue-slider.${format}.js`
+      name: 'VuePowerSlider',
+      fileName: (format) => `vue-power-slider.${format}.js`
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled

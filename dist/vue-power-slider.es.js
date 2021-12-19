@@ -382,7 +382,7 @@ function useDragHandler(store, props2, emit, updateModelValue) {
     clickHandler
   };
 }
-var vue3Slider_vue_vue_type_style_index_0_lang = "";
+var powerSlider_vue_vue_type_style_index_0_lang = "";
 var _export_sfc = (sfc, props2) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props2) {
@@ -391,7 +391,7 @@ var _export_sfc = (sfc, props2) => {
   return target;
 };
 const _sfc_main = defineComponent({
-  name: "vue3-slider",
+  name: "power-slider",
   props,
   setup(props2, { emit }) {
     if (props2.modelValue < props2.min || props2.modelValue > props2.max) {
@@ -518,7 +518,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return _ctx.orientation === "horizontal" ? (openBlock(), createElementBlock("div", {
     key: "horizontal",
     style: normalizeStyle(__spreadValues({}, _ctx.vars)),
-    class: "vue3-slider",
+    class: "vue-power-slider",
     tabindex: "0",
     ref: "slider",
     onTouchstart: _cache[0] || (_cache[0] = (...args) => _ctx.clickHandler && _ctx.clickHandler(...args)),
@@ -566,7 +566,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   ], 36)) : _ctx.orientation === "vertical" ? (openBlock(), createElementBlock("div", {
     key: "vertical",
     style: normalizeStyle(__spreadValues({}, _ctx.vars)),
-    class: "vue3-slider vertical",
+    class: "vue-power-slider vertical",
     tabindex: "0",
     ref: "slider",
     onTouchstart: _cache[5] || (_cache[5] = (...args) => _ctx.clickHandler && _ctx.clickHandler(...args)),
@@ -613,7 +613,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     }, null, 6)
   ], 36)) : (openBlock(), createElementBlock("div", {
     key: "circular",
-    class: "vue3-slider circular",
+    class: "vue-power-slider circular",
     tabindex: "0",
     ref: "slider",
     style: normalizeStyle(__spreadValues({}, _ctx.vars)),
@@ -673,5 +673,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     ], 4)
   ], 36));
 }
-var vue3Slider = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
-export { vue3Slider as VueSlider };
+var powerSlider = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+export { powerSlider as PowerSlider };
