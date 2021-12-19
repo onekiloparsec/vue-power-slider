@@ -131,7 +131,7 @@
     :max="max"
     :step="step"
     :tooltip-text="tooltipText"
-    handle-color="black"
+    handle-color="red"
     handle-border-color="green"
     :handle-scale="1.4"
     color="transparent"
