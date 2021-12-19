@@ -492,8 +492,8 @@ const _sfc_main = defineComponent({
     };
   }
 });
-const _hoisted_1 = /* @__PURE__ */ createElementVNode("div", { class: "track" }, null, -1);
-const _hoisted_2 = /* @__PURE__ */ createElementVNode("div", { class: "track" }, null, -1);
+const _hoisted_1 = { class: "track" };
+const _hoisted_2 = { class: "track" };
 const _hoisted_3 = {
   width: "100%",
   height: "100%",
@@ -539,7 +539,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
             bottom: `max(calc(var(--height, 6px) + 12px), calc(var(--height, 6px) * 1.35))`
           })
         }, [
-          renderSlot(_ctx.$slots, "default", {}, () => [
+          renderSlot(_ctx.$slots, "tooltip", {}, () => [
             createTextVNode(toDisplayString(_ctx.tooltipText), 1)
           ])
         ], 4), [
@@ -548,7 +548,9 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       ]),
       _: 3
     }),
-    _hoisted_1,
+    createElementVNode("div", _hoisted_1, [
+      renderSlot(_ctx.$slots, "track")
+    ]),
     createElementVNode("div", {
       class: "track-filled",
       style: normalizeStyle({
@@ -559,9 +561,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     }, null, 4),
     createElementVNode("div", {
       class: normalizeClass(["handle", { hover: _ctx.applyHandleHoverClass }]),
-      style: normalizeStyle({
-        [_ctx.flip ? "right" : "left"]: _ctx.filledWidth - _ctx.height * 1.35 / 2 + "px"
-      })
+      style: normalizeStyle({ [_ctx.flip ? "right" : "left"]: _ctx.filledWidth - _ctx.height * 1.35 / 2 + "px" })
     }, null, 6)
   ], 36)) : _ctx.orientation === "vertical" ? (openBlock(), createElementBlock("div", {
     key: "vertical",
@@ -587,7 +587,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
             left: `max(calc(var(--height, 6px) + 14px), calc(var(--height, 6px) * 1.35))`
           })
         }, [
-          renderSlot(_ctx.$slots, "default", {}, () => [
+          renderSlot(_ctx.$slots, "tooltip", {}, () => [
             createTextVNode(toDisplayString(_ctx.tooltipText), 1)
           ])
         ], 4), [
@@ -596,7 +596,9 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       ]),
       _: 3
     }),
-    _hoisted_2,
+    createElementVNode("div", _hoisted_2, [
+      renderSlot(_ctx.$slots, "track")
+    ]),
     createElementVNode("div", {
       class: "track-filled",
       style: normalizeStyle({
@@ -607,9 +609,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     }, null, 4),
     createElementVNode("div", {
       class: normalizeClass(["handle", { hover: _ctx.applyHandleHoverClass }]),
-      style: normalizeStyle({
-        [_ctx.flip ? "top" : "bottom"]: _ctx.filledWidth - _ctx.height * 1.35 / 2 + "px"
-      })
+      style: normalizeStyle({ [_ctx.flip ? "top" : "bottom"]: _ctx.filledWidth - _ctx.height * 1.35 / 2 + "px" })
     }, null, 6)
   ], 36)) : (openBlock(), createElementBlock("div", {
     key: "circular",
@@ -661,7 +661,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
               top: `calc(max(calc(${_ctx.tooltipOffset}px + 34px), calc(${_ctx.tooltipOffset}px + var(--height) * 1.3)) * -1)`
             })
           }, [
-            renderSlot(_ctx.$slots, "default", {}, () => [
+            renderSlot(_ctx.$slots, "tooltip", {}, () => [
               createTextVNode(toDisplayString(_ctx.tooltipText), 1)
             ])
           ], 4), [
